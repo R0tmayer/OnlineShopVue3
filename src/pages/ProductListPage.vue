@@ -1,44 +1,44 @@
 <script setup>
-import ProductsListItem from '@/components/ProductsListItem.vue';
+import ProductListItem from '@/components/ProductListItem.vue';
 </script>
 
 <template>
 	<div class="grid grid-cols-5 gap-5 items-stretch">
-		<ProductsListItem
+		<ProductListItem
 			title="Manor Lords"
 			price="100"
 			image="/src/assets/images/ManorLords.jpg"
-		></ProductsListItem>
-		<ProductsListItem
+		></ProductListItem>
+		<ProductListItem
 			title="Manor Lords"
 			price="100"
 			image="/src/assets/images/ManorLords.jpg"
-		></ProductsListItem>
-		<ProductsListItem
+		></ProductListItem>
+		<ProductListItem
 			title="Manor Lords"
 			price="100"
 			image="/src/assets/images/ManorLords.jpg"
-		></ProductsListItem>
-		<ProductsListItem
+		></ProductListItem>
+		<ProductListItem
 			title="Manor Lords"
 			price="100"
 			image="/src/assets/images/ManorLords.jpg"
-		></ProductsListItem>
-		<ProductsListItem
+		></ProductListItem>
+		<ProductListItem
 			title="Manor Lords"
 			price="100"
 			image="/src/assets/images/ManorLords.jpg"
-		></ProductsListItem>
-		<ProductsListItem
+		></ProductListItem>
+		<ProductListItem
 			title="Manor Lords"
 			price="100"
 			image="/src/assets/images/ManorLords.jpg"
-		></ProductsListItem>
-		<ProductsListItem
+		></ProductListItem>
+		<ProductListItem
 			title="Manor Lords"
 			price="100"
 			image="/src/assets/images/ManorLords.jpg"
-		></ProductsListItem>
+		></ProductListItem>
 	</div>
 </template>
 

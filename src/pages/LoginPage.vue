@@ -32,7 +32,3 @@
 		</div>
 	</div>
 </template>
-
-<script setup>
-import MyTextInput from '@/components/MyFormInput.vue';
-</script>

@@ -3,14 +3,16 @@ import { createApp } from 'vue';
 import App from './App.vue';
 
 import { createRouter, createWebHistory } from 'vue-router';
-import CartPage from './pages/CartPage.vue';
-import LoginPage from './pages/LoginPage.vue';
-import ProductOverviewPage from './pages/ProductOverviewPage.vue';
-import ProductsListPage from './pages/ProductsListPage.vue';
-
+import AdminProductList from './components/AdminProductList.vue';
 import MyButton from './components/MyButton.vue';
 import MyFormInput from './components/MyFormInput.vue';
 import Navbar from './components/Navbar.vue';
+import AdminDashboardPage from './pages/AdminDashboardPage.vue';
+import CartPage from './pages/CartPage.vue';
+import LoginPage from './pages/LoginPage.vue';
+import ProductListPage from './pages/ProductListPage.vue';
+import ProductOverviewPage from './pages/ProductOverviewPage.vue';
+import './tailwindstyles.css';
 
 const routes = [
 	{
@@ -20,8 +22,8 @@ const routes = [
 	},
 	{
 		path: '/products',
-		name: 'productsListPage',
-		component: ProductsListPage,
+		name: 'productListPage',
+		component: ProductListPage,
 	},
 	{
 		path: '/login',
@@ -33,14 +35,35 @@ const routes = [
 		name: 'cartPage',
 		component: CartPage,
 	},
+	{
+		path: '/admin',
+		name: 'adminDashboardPage',
+		redirect: { name: 'adminProductListPage' },
+		component: AdminDashboardPage,
+		children: [
+			{
+				path: 'products',
+				name: 'adminProductListPage',
+				component: AdminProductList,
+			},
+			{
+				path: 'users',
+				name: 'adminUserListPage',
+				component: AdminProductList,
+			},
+			{
+				path: 'roles',
+				name: 'adminRoleListPage',
+				component: AdminProductList,
+			},
+		],
+	},
 ];
 
 const router = createRouter({
 	history: createWebHistory(),
 	routes,
 });
-
-import './tailwindstyles.css';
 
 const app = createApp(App);
 

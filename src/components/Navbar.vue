@@ -1,30 +1,16 @@
 <template>
 	<div class="w-full flex items-center justify-between p-4 font-sans text-lg">
-		<RouterLink :to="{ name: 'productsListPage' }">
+		<RouterLink :to="{ name: 'productListPage' }">
 			<p>Navbar Brand</p>
 		</RouterLink>
 		<div class="inline-flex items-center justify-center space-x-10">
-			<RouterLink
-				:to="{ name: 'productOverviewPage' }"
-				:class="{
-					'border-2 border-blue-400 p-1 rounded-md':
-						currentRoute === 'productOverviewPage',
-				}"
-			>
+			<RouterLink :to="{ name: 'productOverviewPage' }">
 				<p>Home</p>
 			</RouterLink>
-			<RouterLink
-				:to="{ name: 'productsListPage' }"
-				:class="{
-					'border-2 border-blue-400 p-1 rounded-md': currentRoute === 'productsListPage',
-				}"
-			>
+			<RouterLink :to="{ name: 'productListPage' }">
 				<p>Catalog</p>
 			</RouterLink>
-			<RouterLink
-				:to="{ name: 'productsListPage' }"
-				:class="{ 'border-2 border-blue-400 p-1 rounded-md': currentRoute === 'admin' }"
-			>
+			<RouterLink :to="{ name: 'adminDashboardPage' }">
 				<p>Admin</p>
 			</RouterLink>
 		</div>
