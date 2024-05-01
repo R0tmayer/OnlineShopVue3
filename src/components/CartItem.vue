@@ -3,9 +3,9 @@ import MyButton from './MyButton.vue';
 	<div class="flex justify-between shadow-md border border-slate-200 rounded-2xl p-5">
 		<div class="flex space-x-5">
 			<div class="overflow-hidden rounded-2xl max-w-[150px]">
-				<img src="/src/assets/images/ManorLords.jpg" alt="no image found" />
+				<img :src="product.image" alt="no image found" />
 			</div>
-			<p class="text-xl">Manor Lords</p>
+			<p class="text-xl">{{ product.name }}</p>
 		</div>
 		<div class="flex flex-col items-center space-y-3">
 			<div class="inline-flex items-center space-x-2">
@@ -13,13 +13,17 @@ import MyButton from './MyButton.vue';
 				<p>2</p>
 				<MyButton :icon="PlusIcon" :color="buttonColors.white"></MyButton>
 			</div>
-			<p>$100</p>
+			<p>${{ product.price }}</p>
 			<MyButton text="Delete" :icon="TrashIcon" :color="buttonColors.red"></MyButton>
 		</div>
 	</div>
 </template>
 
 <script setup>
+defineProps({
+	product: Object,
+});
+
 import { ref } from 'vue';
 
 import MinusIcon from '@/assets/icons/MinusIcon.vue';

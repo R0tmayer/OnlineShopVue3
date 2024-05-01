@@ -3,12 +3,7 @@
 	<div class="flex space-x-10">
 		<!-- Items -->
 		<div class="flex flex-col space-y-5 w-2/3">
-			<CartItem></CartItem>
-			<CartItem></CartItem>
-			<CartItem></CartItem>
-			<CartItem></CartItem>
-			<CartItem></CartItem>
-			<CartItem></CartItem>
+			<CartItem v-for="product in products" :product="product"></CartItem>
 		</div>
 		<!-- Subtotal -->
 		<div
@@ -19,7 +14,9 @@
 				<p>$100</p>
 			</div>
 			<hr />
-			<MyButton text="Checkout" class="p-4"></MyButton>
+			<RouterLink :to="{ name: 'checkoutPage' }">
+				<MyButton text="Checkout" class="p-4 w-full"></MyButton>
+			</RouterLink>
 		</div>
 	</div>
 </template>
@@ -27,4 +24,6 @@
 <script setup>
 import CartItem from '@/components/CartItem.vue';
 import MyButton from '@/components/MyButton.vue';
+
+import { products } from '@/mocks/products';
 </script>

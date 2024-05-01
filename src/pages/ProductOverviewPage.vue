@@ -2,7 +2,7 @@
 	<div class="flex space-x-7">
 		<div class="shrink-0">
 			<img
-				src="/src/assets/images/ManorLords.jpg"
+				src="/src/assets/images/gameImages/ManorLords.jpg"
 				alt="no image found"
 				class="rounded-2xl border border-black border-opacity-25 shadow-md"
 			/>
@@ -26,4 +26,8 @@
 
 <script setup>
 import CartIcon from '@/assets/icons/CartIcon.vue';
+
+defineProps({
+	id: String,
+});
 </script>

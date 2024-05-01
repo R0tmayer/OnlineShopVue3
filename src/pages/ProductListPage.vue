@@ -1,45 +1,14 @@
 <script setup>
 import ProductListItem from '@/components/ProductListItem.vue';
+import { products } from '@/mocks/products';
 </script>
 
 <template>
 	<div class="grid grid-cols-5 gap-5 items-stretch">
 		<ProductListItem
-			title="Manor Lords"
-			price="100"
-			image="/src/assets/images/ManorLords.jpg"
-		></ProductListItem>
-		<ProductListItem
-			title="Manor Lords"
-			price="100"
-			image="/src/assets/images/ManorLords.jpg"
-		></ProductListItem>
-		<ProductListItem
-			title="Manor Lords"
-			price="100"
-			image="/src/assets/images/ManorLords.jpg"
-		></ProductListItem>
-		<ProductListItem
-			title="Manor Lords"
-			price="100"
-			image="/src/assets/images/ManorLords.jpg"
-		></ProductListItem>
-		<ProductListItem
-			title="Manor Lords"
-			price="100"
-			image="/src/assets/images/ManorLords.jpg"
-		></ProductListItem>
-		<ProductListItem
-			title="Manor Lords"
-			price="100"
-			image="/src/assets/images/ManorLords.jpg"
-		></ProductListItem>
-		<ProductListItem
-			title="Manor Lords"
-			price="100"
-			image="/src/assets/images/ManorLords.jpg"
+			v-for="product in products"
+			:key="product.id"
+			:product="product"
 		></ProductListItem>
 	</div>
 </template>
-
-<style scoped></style>
