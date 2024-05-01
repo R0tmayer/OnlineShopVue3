@@ -11,7 +11,7 @@
 		<p class="font-sans p-2 text-md">{{ product.name }}</p>
 		<div class="flex items-center justify-between mt-auto mb-3 mx-3">
 			<p>${{ product.price }}</p>
-			<MyButton text="Add to cart" :icon="CartIcon"></MyButton>
+			<MyButton text="Add to cart" :icon="ShoppingCartIcon"></MyButton>
 		</div>
 	</div>
 </template>
@@ -21,5 +21,5 @@ defineProps({
 	product: Object,
 });
 
-import CartIcon from '@/assets/icons/CartIcon.vue';
+import { ShoppingCartIcon } from '@heroicons/vue/24/outline';
 </script>

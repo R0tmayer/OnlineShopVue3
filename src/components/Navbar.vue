@@ -17,14 +17,14 @@
 		<div class="inline-flex items-center justify-center space-x-5">
 			<RouterLink :to="{ name: 'cartPage' }">
 				<MyButton
-					class="h-12 w-12 items-center justify-center"
-					:icon="CartIcon"
+					class="h-10 w-10 items-center justify-center"
+					:icon="ShoppingCartIcon"
 					:color="buttonColors.white"
 				/>
 			</RouterLink>
 			<RouterLink :to="{ name: 'loginPage' }">
 				<MyButton
-					class="h-12 w-12 items-center justify-center"
+					class="h-10 w-10 items-center justify-center"
 					:icon="UserIcon"
 					:color="buttonColors.white"
 				/>
@@ -34,14 +34,9 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue';
-import { useRoute } from 'vue-router';
-
-const route = useRoute();
-const currentRoute = computed(() => route.name);
-
-import CartIcon from '@/assets/icons/CartIcon.vue';
-import UserIcon from '@/assets/icons/UserIcon.vue';
+import { ShoppingCartIcon, UserIcon } from '@heroicons/vue/24/outline';
+import { ref } from 'vue';
+import MyButton from './MyButton.vue';
 
 const buttonColors = ref({
 	white: 'bg-white text-black hover:bg-black hover:text-white',

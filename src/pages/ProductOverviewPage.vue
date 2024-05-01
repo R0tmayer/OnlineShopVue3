@@ -18,14 +18,14 @@
 			</div>
 			<div class="inline-flex space-x-5">
 				<p class="text-xl p-1">$100</p>
-				<MyButton :icon="CartIcon" text="Add to cart"></MyButton>
+				<MyButton :icon="ShoppingCartIcon" text="Add to cart"></MyButton>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script setup>
-import CartIcon from '@/assets/icons/CartIcon.vue';
+import { ShoppingCartIcon } from '@heroicons/vue/24/outline';
 
 defineProps({
 	id: String,

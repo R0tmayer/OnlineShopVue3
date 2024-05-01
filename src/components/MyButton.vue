@@ -1,11 +1,7 @@
 <script setup>
 defineProps({
-	text: {
-		type: String,
-	},
-	icon: {
-		type: Object,
-	},
+	text: String,
+	icon: Object,
 	color: {
 		type: String,
 		default: 'bg-blue-600 text-white hover:bg-blue-700',
@@ -15,7 +11,7 @@ defineProps({
 
 <template>
 	<button :class="['inline-flex justify-center border p-1.5 rounded-lg', color]">
-		<component :is="icon"></component>
+		<component :is="icon" class="h-6 w-6"></component>
 		{{ text }}
 	</button>
 </template>

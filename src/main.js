@@ -13,9 +13,11 @@ import Navbar from './components/Navbar.vue';
 import AdminDashboardPage from './pages/AdminDashboardPage.vue';
 import CartPage from './pages/CartPage.vue';
 import CheckoutPage from './pages/CheckoutPage.vue';
+import ForgotPasswordPage from './pages/ForgotPasswordPage.vue';
 import LoginPage from './pages/LoginPage.vue';
 import ProductListPage from './pages/ProductListPage.vue';
 import ProductOverviewPage from './pages/ProductOverviewPage.vue';
+import RegisterPage from './pages/RegisterPage.vue';
 
 import './tailwindstyles.css';
 
@@ -38,6 +40,16 @@ const routes = [
 		path: '/login',
 		name: 'loginPage',
 		component: LoginPage,
+	},
+	{
+		path: '/register',
+		name: 'registerPage',
+		component: RegisterPage,
+	},
+	{
+		path: '/forgotPassword',
+		name: 'forgotPasswordPage',
+		component: ForgotPasswordPage,
 	},
 	{
 		path: '/cart',

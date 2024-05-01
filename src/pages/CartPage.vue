@@ -1,5 +1,5 @@
 <template>
-	<p class="text-center text-2xl">Cart Items</p>
+	<p class="text-center text-2xl mb-3">Cart Items</p>
 	<div class="flex space-x-10">
 		<!-- Items -->
 		<div class="flex flex-col space-y-5 w-2/3">

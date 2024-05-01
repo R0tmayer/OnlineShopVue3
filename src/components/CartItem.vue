@@ -1,4 +1,3 @@
-import MyButton from './MyButton.vue';
 <template>
 	<div class="flex justify-between shadow-md border border-slate-200 rounded-2xl p-5">
 		<div class="flex space-x-5">
@@ -8,13 +7,13 @@ import MyButton from './MyButton.vue';
 			<p class="text-xl">{{ product.name }}</p>
 		</div>
 		<div class="flex flex-col items-center space-y-3">
-			<div class="inline-flex items-center space-x-2">
+			<div class="inline-flex items-center space-x-3">
 				<MyButton :icon="MinusIcon" :color="buttonColors.white"></MyButton>
 				<p>2</p>
 				<MyButton :icon="PlusIcon" :color="buttonColors.white"></MyButton>
 			</div>
 			<p>${{ product.price }}</p>
-			<MyButton text="Delete" :icon="TrashIcon" :color="buttonColors.red"></MyButton>
+			<MyButton text="Delete" :icon="TrashIcon" :color="buttonColors.red" />
 		</div>
 	</div>
 </template>
@@ -26,9 +25,8 @@ defineProps({
 
 import { ref } from 'vue';
 
-import MinusIcon from '@/assets/icons/MinusIcon.vue';
-import PlusIcon from '@/assets/icons/PlusIcon.vue';
-import TrashIcon from '@/assets/icons/TrashIcon.vue';
+import { MinusIcon, PlusIcon, TrashIcon } from '@heroicons/vue/24/outline';
+import MyButton from './MyButton.vue';
 
 const buttonColors = ref({
 	white: 'bg-white text-black hover:bg-black hover:text-white',

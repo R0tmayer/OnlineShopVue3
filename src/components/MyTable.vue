@@ -16,7 +16,7 @@
 				</td>
 				<td>
 					<div class="inline-flex space-x-3">
-						<MyButton text="Edit" class="min-w-[60px]"></MyButton>
+						<MyButton text="Edit" :icon="PencilSquareIcon" class="min-w-[60px]"></MyButton>
 						<MyButton text="Delete" :icon="TrashIcon" class="min-w-[60px]" :color="buttonColors.red"></MyButton>
 					</div>
 				</td>
@@ -28,7 +28,7 @@
 <script setup>
 import { ref } from 'vue';
 
-import TrashIcon from '@/assets/icons/TrashIcon.vue';
+import { PencilSquareIcon, TrashIcon } from '@heroicons/vue/24/outline';
 
 defineProps({
 	columns: Array,
