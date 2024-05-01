@@ -1,6 +1,6 @@
 <template>
 	<div class="flex flex-col border rounded-md p-5 text-lg space-y-5 h-full">
-		<RouterLink :to="{ name: 'adminProductListPage' }" class="inline-flex space-x-2">
+		<RouterLink :to="{ name: 'adminOrderListPage' }" class="inline-flex space-x-2">
 			<ReceiptPercentIcon class="w-6 h-6"></ReceiptPercentIcon>
 			<div>Orders</div>
 		</RouterLink>

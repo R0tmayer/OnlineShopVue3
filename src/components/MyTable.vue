@@ -11,7 +11,7 @@
 		<tbody>
 			<tr v-for="(item, index) in items" :key="index" class="bg-white border-b">
 				<td class=" px-6 py-4" v-for="(column, indexColumn) in columns" :key="indexColumn">
-					<div v-if="column === 'price'">${{ item[column].toFixed(2) }}</div>
+					<div v-if="column === 'price' || column === 'total'">$ {{ item[column].toFixed(2) }}</div>
 					<div v-else>{{ item[column] }}</div>
 				</td>
 				<td>

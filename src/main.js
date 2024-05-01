@@ -3,6 +3,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 
 import { createRouter, createWebHistory } from 'vue-router';
+import AdminOrderList from './components/AdminOrderList.vue';
 import AdminProductList from './components/AdminProductList.vue';
 import AdminRoleList from './components/AdminRoleList.vue';
 import AdminUserList from './components/AdminUserList.vue';
@@ -67,6 +68,11 @@ const routes = [
 		redirect: { name: 'adminProductListPage' },
 		component: AdminDashboardPage,
 		children: [
+			{
+				path: 'orders',
+				name: 'adminOrderListPage',
+				component: AdminOrderList,
+			},
 			{
 				path: 'products',
 				name: 'adminProductListPage',
