@@ -7,6 +7,8 @@ import AdminOrderList from './components/AdminOrderList.vue';
 import AdminProductList from './components/AdminProductList.vue';
 import AdminRoleList from './components/AdminRoleList.vue';
 import AdminUserList from './components/AdminUserList.vue';
+import BaseEditModal from './components/BaseEditModal.vue';
+import BaseModal from './components/BaseModal.vue';
 import MyButton from './components/MyButton.vue';
 import MyFormInput from './components/MyFormInput.vue';
 import MyTable from './components/MyTable.vue';
@@ -103,5 +105,7 @@ app.component('MyButton', MyButton);
 app.component('MyFormInput', MyFormInput);
 app.component('MyTable', MyTable);
 app.component('Navbar', Navbar);
+app.component('BaseModal', BaseModal);
+app.component('BaseEditModal', BaseEditModal);
 
 app.use(router).mount('#app');

@@ -16,8 +16,8 @@
 				</td>
 				<td>
 					<div class="inline-flex space-x-3">
-						<MyButton text="Edit" :icon="PencilSquareIcon" class="min-w-[60px]"></MyButton>
-						<MyButton text="Delete" :icon="TrashIcon" class="min-w-[60px]" :color="buttonColors.red"></MyButton>
+						<MyButton text="Edit" :icon="PencilSquareIcon" class="min-w-[60px]" @click="openEditModal"></MyButton>
+						<MyButton text="Delete" :icon="TrashIcon" class="min-w-[60px]" :color="buttonColors.red" @click="openDeleteModal"></MyButton>
 					</div>
 				</td>
 			</tr>
@@ -34,6 +34,16 @@ defineProps({
 	columns: Array,
 	items: Array,
 });
+
+const emit = defineEmits(['openEditModal', 'openDeleteModal'])
+
+function openEditModal (){
+	emit('openEditModal');
+}
+
+function openDeleteModal (){
+	emit('openDeleteModal');
+}
 
 const buttonColors = ref({
 	red: 'bg-red-500 text-white border-red-500 hover:bg-red-600',

@@ -10,7 +10,9 @@ defineProps({
 </script>
 
 <template>
-	<button :class="['inline-flex justify-center border p-1.5 rounded-lg', color]">
+	<button
+		:class="['inline-flex justify-center items-center border p-1.5 rounded-lg', color]"
+	>
 		<component :is="icon" class="h-6 w-6"></component>
 		{{ text }}
 	</button>

@@ -1,8 +1,3 @@
-<script setup>
-import ProductListItem from '@/components/ProductListItem.vue';
-import { products } from '@/mocks/products';
-</script>
-
 <template>
 	<div class="grid grid-cols-5 gap-5 items-stretch">
 		<ProductListItem
@@ -12,3 +7,8 @@ import { products } from '@/mocks/products';
 		></ProductListItem>
 	</div>
 </template>
+
+<script setup>
+import ProductListItem from '@/components/ProductListItem.vue';
+import { products } from '@/mocks/products';
+</script>
