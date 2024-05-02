@@ -4,6 +4,12 @@
 		@closeEditModal="isEditModalOpen = false"
 		@saveEditModal="isEditModalOpen = false"
 	></AdminRoleEditModal>
+	<BaseDeleteConfirmModal
+		v-if="isDeleteModalOpen"
+		context="role"
+		@closeDeleteModal="isDeleteModalOpen = false"
+		@deleteItem="isDeleteModalOpen = false"
+	></BaseDeleteConfirmModal>
 	<div class="rounded-2xl overflow-hidden border">
 		<div class="p-5 text-lg">
 			<p>All roles</p>
@@ -13,6 +19,7 @@
 				:items="roles"
 				:columns="columns"
 				@openEditModal="isEditModalOpen = true"
+				@openDeleteModal="isDeleteModalOpen = true"
 			></MyTable>
 		</div>
 	</div>
@@ -27,4 +34,5 @@ import AdminRoleEditModal from './AdminRoleEditModal.vue';
 const columns = ['name', ''];
 
 const isEditModalOpen = ref(false);
+const isDeleteModalOpen = ref(false);
 </script>

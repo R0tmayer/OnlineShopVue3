@@ -4,6 +4,12 @@
 		@closeEditModal="isEditModalOpen = false"
 		@saveEditModal="isEditModalOpen = false"
 	></AdminProductEditModal>
+	<BaseDeleteConfirmModal
+		v-if="isDeleteModalOpen"
+		context="product"
+		@closeDeleteModal="isDeleteModalOpen = false"
+		@deleteItem="isDeleteModalOpen = false"
+	></BaseDeleteConfirmModal>
 	<div class="rounded-2xl overflowa-hidden border">
 		<div class="p-5 text-lg">
 			<p>All products</p>
@@ -13,6 +19,7 @@
 				:items="items"
 				:columns="columns"
 				@openEditModal="isEditModalOpen = true"
+				@openDeleteModal="isDeleteModalOpen = true"
 			></MyTable>
 		</div>
 	</div>
@@ -32,4 +39,5 @@ const items = products.map((product) => ({
 }));
 
 const isEditModalOpen = ref(false);
+const isDeleteModalOpen = ref(false);
 </script>

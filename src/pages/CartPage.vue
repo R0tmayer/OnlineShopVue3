@@ -23,7 +23,6 @@
 
 <script setup>
 import CartItem from '@/components/CartItem.vue';
-import MyButton from '@/components/MyButton.vue';
 
 import { products } from '@/mocks/products';
 </script>
