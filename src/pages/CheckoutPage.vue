@@ -2,13 +2,18 @@
 	<div class="text-3xl text-center mb-3">Checkout</div>
 	<div class="flex space-x-5">
 		<div class="flex flex-col w-1/2 space-y-1 border p-10 rounded-2xl bg-slate-50">
-			<MyFormInput labelText="First name" placeholderText="First name"></MyFormInput>
-			<MyFormInput labelText="Last name" placeholderText="Last name"></MyFormInput>
-			<MyFormInput labelText="Email" placeholderText="Email"></MyFormInput>
-			<MyFormInput labelText="Country" placeholderText="Country"></MyFormInput>
-			<MyFormInput labelText="City" placeholderText="City"></MyFormInput>
-			<MyFormInput labelText="Street" placeholderText="Street"></MyFormInput>
-			<MyFormInput labelText="Postcode" placeholderText="Postcode"></MyFormInput>
+			<Form @submit="onSubmit">
+				<Field name="TEST" type="email" rules="required|email"></Field>
+				<ErrorMessage name="TEST" class="" />
+				<button>TEST</button>
+			</Form>
+			<BaseFormInput labelText="First name" placeholderText="First name"></BaseFormInput>
+			<BaseFormInput labelText="Last name" placeholderText="Last name"></BaseFormInput>
+			<BaseFormInput labelText="Email" placeholderText="Email"></BaseFormInput>
+			<BaseFormInput labelText="Country" placeholderText="Country"></BaseFormInput>
+			<BaseFormInput labelText="City" placeholderText="City"></BaseFormInput>
+			<BaseFormInput labelText="Street" placeholderText="Street"></BaseFormInput>
+			<BaseFormInput labelText="Postcode" placeholderText="Postcode"></BaseFormInput>
 		</div>
 		<!-- Subtotal -->
 		<div
@@ -32,4 +37,8 @@
 
 <script setup>
 import { CreditCardIcon } from '@heroicons/vue/24/outline';
+
+function onSubmit(values) {
+	console.log(values);
+}
 </script>

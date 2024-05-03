@@ -1,4 +1,5 @@
-import BaseButton from './BaseButton.vue'; import MyFormInput from './MyFormInput.vue';
+import BaseButton from './BaseButton.vue'; import BaseFormInput from
+'./BaseFormInput.vue';
 <template>
 	<BaseModal @close="close">
 		<div class="flex flex-col space-y-10">

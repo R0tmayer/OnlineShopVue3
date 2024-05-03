@@ -8,12 +8,12 @@
 				<p class="text-2xl tracking-tight text-gray-900 text-center">
 					Register new account
 				</p>
-				<MyFormInput labelText="Email" placeholderText="Email"></MyFormInput>
-				<MyFormInput labelText="Password" placeholderText="Password"></MyFormInput>
-				<MyFormInput
+				<BaseFormInput labelText="Email" placeholderText="Email"></BaseFormInput>
+				<BaseFormInput labelText="Password" placeholderText="Password"></BaseFormInput>
+				<BaseFormInput
 					labelText="Confirm password"
 					placeholderText="Confirm password"
-				></MyFormInput>
+				></BaseFormInput>
 				<div class="flex items-center justify-between"></div>
 				<BaseButton text="Register" class="justify-center p-2.5 rounded-xl"></BaseButton>
 				<div class="inline-flex space-x-2">

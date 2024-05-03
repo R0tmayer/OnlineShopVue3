@@ -2,14 +2,14 @@
 	<BaseAdminList context="product" :columns="columns" :items="items">
 		<template v-slot:editModalContent>
 			<div class="flex flex-col space-y-3">
-				<MyFormInput labelText="Name" placeholderText="Name"></MyFormInput>
-				<MyFormInput labelText="Price" placeholderText="Price"></MyFormInput>
+				<BaseFormInput labelText="Name" placeholderText="Name"></BaseFormInput>
+				<BaseFormInput labelText="Price" placeholderText="Price"></BaseFormInput>
 			</div>
 		</template>
 		<template v-slot:addModalContent>
 			<div class="flex flex-col space-y-3">
-				<MyFormInput labelText="Name" placeholderText="Name"></MyFormInput>
-				<MyFormInput labelText="Price" placeholderText="Price"></MyFormInput>
+				<BaseFormInput labelText="Name" placeholderText="Name"></BaseFormInput>
+				<BaseFormInput labelText="Price" placeholderText="Price"></BaseFormInput>
 			</div>
 		</template>
 	</BaseAdminList>

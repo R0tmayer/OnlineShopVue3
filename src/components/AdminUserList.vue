@@ -3,9 +3,22 @@
 		<template v-slot:editModalContent>
 			<p class="text-xl text-center">Edit {{ context }}</p>
 			<div class="flex flex-col space-y-3">
-				<MyFormInput labelText="First name" placeholderText="First name"></MyFormInput>
-				<MyFormInput labelText="Last name" placeholderText="Last name"></MyFormInput>
-				<MyFormInput labelText="Email" placeholderText="Email"></MyFormInput>
+				<BaseFormInput
+					labelText="First name"
+					placeholderText="First name"
+				></BaseFormInput>
+				<BaseFormInput labelText="Last name" placeholderText="Last name"></BaseFormInput>
+				<BaseFormInput labelText="Email" placeholderText="Email"></BaseFormInput>
+			</div>
+		</template>
+		<template v-slot:addModalContent>
+			<div class="flex flex-col space-y-3">
+				<BaseFormInput
+					labelText="First name"
+					placeholderText="First name"
+				></BaseFormInput>
+				<BaseFormInput labelText="Last name" placeholderText="Last name"></BaseFormInput>
+				<BaseFormInput labelText="Email" placeholderText="Email"></BaseFormInput>
 			</div>
 		</template>
 	</BaseAdminList>

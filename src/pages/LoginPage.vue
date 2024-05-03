@@ -8,8 +8,8 @@
 				<p class="text-2xl tracking-tight text-gray-900 text-center">
 					Sign in to your account
 				</p>
-				<MyFormInput labelText="Email" placeholderText="Email"></MyFormInput>
-				<MyFormInput labelText="Password" placeholderText="Password"></MyFormInput>
+				<BaseFormInput labelText="Email" placeholderText="Email"></BaseFormInput>
+				<BaseFormInput labelText="Password" placeholderText="Password"></BaseFormInput>
 				<div class="flex items-center justify-between">
 					<div class="flex items-center space-x-3 ms-1">
 						<input id="remember" type="checkbox" class="cursor-pointer w-4 h-4" />
