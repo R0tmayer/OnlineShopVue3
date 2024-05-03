@@ -1,6 +1,6 @@
 import BaseButton from './BaseButton.vue'; import MyFormInput from './MyFormInput.vue';
 <template>
-	<BaseModal @close="closeDeleteModal">
+	<BaseModal @close="close">
 		<div class="flex flex-col space-y-10">
 			<div class="text-center text-2xl">Delete {{ context }}</div>
 			<div>You're going to delete {{ context }}. Are you sure?</div>
@@ -8,7 +8,7 @@ import BaseButton from './BaseButton.vue'; import MyFormInput from './MyFormInpu
 				<BaseButton
 					text="No, Keep it"
 					:color="buttonColors.white"
-					@click="closeDeleteModal"
+					@click="close"
 				></BaseButton>
 				<BaseButton
 					text="Yes, Delete!"
@@ -30,7 +30,7 @@ function deleteItem() {
 	emit('deleteItem');
 }
 
-function closeDeleteModal() {
+function close() {
 	emit('closeDeleteModal');
 }
 

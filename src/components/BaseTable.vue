@@ -1,6 +1,6 @@
 <template>
 	<table class="w-full text-left">
-		<thead class="bg-gray-100 text-sm uppercase text-gray-700 border-y">
+		<thead class="bg-gray-100 text-sm uppercase text-gray-700">
 			<tr>
 				<th v-for="col in columns" :key="index" class="px-6 py-3">
 					{{ col }}
@@ -9,7 +9,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr v-for="(item, index) in items" :key="index" class="bg-white border-b">
+			<tr v-for="(item, index) in items" :key="index" class="bg-white border-b last:border-b-0">
 				<td class=" px-6 py-4" v-for="(column, indexColumn) in columns" :key="indexColumn">
 					<div v-if="column === 'price' || column === 'total'">$ {{ item[column].toFixed(2) }}</div>
 					<div v-else>{{ item[column] }}</div>
