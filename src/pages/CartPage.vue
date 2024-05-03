@@ -15,7 +15,7 @@
 			</div>
 			<hr />
 			<RouterLink :to="{ name: 'checkoutPage' }">
-				<MyButton text="Checkout" class="p-4 w-full"></MyButton>
+				<BaseButton text="Checkout" class="p-4 w-full"></BaseButton>
 			</RouterLink>
 		</div>
 	</div>

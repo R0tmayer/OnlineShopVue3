@@ -19,7 +19,7 @@
 						<p class="text-blue-600 hover:text-blue-700">Forgot password?</p>
 					</RouterLink>
 				</div>
-				<MyButton text="Sign in" class="justify-center p-2.5 rounded-xl"></MyButton>
+				<BaseButton text="Sign in" class="justify-center p-2.5 rounded-xl"></BaseButton>
 				<div class="inline-flex space-x-2">
 					<p>Don't have an account?</p>
 					<RouterLink :to="{ name: 'registerPage' }">

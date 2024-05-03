@@ -15,7 +15,7 @@
 					placeholderText="Confirm password"
 				></MyFormInput>
 				<div class="flex items-center justify-between"></div>
-				<MyButton text="Register" class="justify-center p-2.5 rounded-xl"></MyButton>
+				<BaseButton text="Register" class="justify-center p-2.5 rounded-xl"></BaseButton>
 				<div class="inline-flex space-x-2">
 					<p>Already have an account?</p>
 					<RouterLink :to="{ name: 'loginPage' }">

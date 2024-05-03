@@ -8,12 +8,12 @@
 		</div>
 		<div class="flex flex-col items-center space-y-3">
 			<div class="inline-flex items-center space-x-3">
-				<MyButton :icon="MinusIcon" :color="buttonColors.white"></MyButton>
+				<BaseButton :icon="MinusIcon" :color="buttonColors.white"></BaseButton>
 				<p>2</p>
-				<MyButton :icon="PlusIcon" :color="buttonColors.white"></MyButton>
+				<BaseButton :icon="PlusIcon" :color="buttonColors.white"></BaseButton>
 			</div>
 			<p>${{ product.price }}</p>
-			<MyButton text="Delete" :icon="TrashIcon" :color="buttonColors.red" />
+			<BaseButton text="Delete" :icon="TrashIcon" :color="buttonColors.red" />
 		</div>
 	</div>
 </template>
@@ -26,10 +26,7 @@ defineProps({
 import { ref } from 'vue';
 
 import { MinusIcon, PlusIcon, TrashIcon } from '@heroicons/vue/24/outline';
-import MyButton from './MyButton.vue';
+import BaseButton from './BaseButton.vue';
 
-const buttonColors = ref({
-	white: 'bg-white text-black hover:bg-black hover:text-white',
-	red: 'bg-white text-red-500 border-red-500 hover:bg-red-500 hover:text-white',
-});
+import { buttonColors } from '@/ButtonColors';
 </script>

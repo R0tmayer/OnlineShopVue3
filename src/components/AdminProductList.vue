@@ -1,9 +1,14 @@
 <template>
-	<AdminProductEditModal
+	<BaseEditModal
 		v-if="isEditModalOpen"
 		@closeEditModal="isEditModalOpen = false"
 		@saveEditModal="isEditModalOpen = false"
-	></AdminProductEditModal>
+	>
+		<p class="text-xl text-center">Edit product</p>
+		<div class="flex flex-col space-y-3">
+			<MyFormInput labelText="Name" placeholderText="Name"></MyFormInput>
+			<MyFormInput labelText="Price" placeholderText="Price"></MyFormInput></div
+	></BaseEditModal>
 	<BaseDeleteConfirmModal
 		v-if="isDeleteModalOpen"
 		context="product"
@@ -15,12 +20,12 @@
 			<p>All products</p>
 		</div>
 		<div>
-			<MyTable
+			<BaseTable
 				:items="items"
 				:columns="columns"
 				@openEditModal="isEditModalOpen = true"
 				@openDeleteModal="isDeleteModalOpen = true"
-			></MyTable>
+			></BaseTable>
 		</div>
 	</div>
 </template>
@@ -29,8 +34,6 @@
 import { ref } from 'vue';
 
 import { products } from '@/mocks/products';
-
-import AdminProductEditModal from './AdminProductEditModal.vue';
 
 const columns = ['name', 'price', ''];
 const items = products.map((product) => ({

@@ -20,11 +20,11 @@
 			</div>
 			<hr />
 			<RouterLink :to="{ name: 'checkoutPage' }">
-				<MyButton
+				<BaseButton
 					text="PAY"
 					:icon="CreditCardIcon"
 					class="p-4 w-full bg-gray-800 hover:bg-gray-900"
-				></MyButton>
+				></BaseButton>
 			</RouterLink>
 		</div>
 	</div>

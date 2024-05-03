@@ -11,7 +11,7 @@
 		<p class="font-sans p-2 text-md">{{ product.name }}</p>
 		<div class="flex items-center justify-between mt-auto mb-3 mx-3">
 			<p>${{ product.price }}</p>
-			<MyButton text="Add to cart" :icon="ShoppingCartIcon"></MyButton>
+			<BaseButton text="Add to cart" :icon="ShoppingCartIcon"></BaseButton>
 		</div>
 	</div>
 </template>

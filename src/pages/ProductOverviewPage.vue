@@ -18,7 +18,7 @@
 			</div>
 			<div class="inline-flex space-x-5">
 				<p class="text-xl p-1">$100</p>
-				<MyButton :icon="ShoppingCartIcon" text="Add to cart"></MyButton>
+				<BaseButton :icon="ShoppingCartIcon" text="Add to cart"></BaseButton>
 			</div>
 		</div>
 	</div>

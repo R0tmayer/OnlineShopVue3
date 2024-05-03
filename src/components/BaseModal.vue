@@ -4,9 +4,7 @@
 			<div class="p-2 text-right">
 				<BaseModalButtonClose @click="close"></BaseModalButtonClose>
 			</div>
-			<div class="p-6">
-				<slot></slot>
-			</div>
+			<div class="p-6"><slot></slot></div>
 		</div>
 	</div>
 </template>

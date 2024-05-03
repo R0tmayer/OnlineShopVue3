@@ -1,9 +1,15 @@
 <template>
-	<AdminUserEditModal
+	<BaseEditModal
 		v-if="isEditModalOpen"
 		@closeEditModal="isEditModalOpen = false"
 		@saveEditModal="isEditModalOpen = false"
-	></AdminUserEditModal>
+	>
+		<p class="text-xl text-center">Edit user</p>
+		<div class="flex flex-col space-y-3">
+			<MyFormInput labelText="First name" placeholderText="First name"></MyFormInput>
+			<MyFormInput labelText="Last name" placeholderText="Last name"></MyFormInput>
+			<MyFormInput labelText="Email" placeholderText="Email"></MyFormInput></div
+	></BaseEditModal>
 	<BaseDeleteConfirmModal
 		v-if="isDeleteModalOpen"
 		context="user"
@@ -15,12 +21,12 @@
 			<p>All users</p>
 		</div>
 		<div>
-			<MyTable
+			<BaseTable
 				:items="users"
 				:columns="columns"
 				@openEditModal="isEditModalOpen = true"
 				@openDeleteModal="isDeleteModalOpen = true"
-			></MyTable>
+			></BaseTable>
 		</div>
 	</div>
 </template>
@@ -29,7 +35,6 @@
 import { users } from '@/mocks/users';
 
 import { ref } from 'vue';
-import AdminUserEditModal from './AdminUserEditModal.vue';
 
 const columns = ['firstName', 'lastName', 'email', ''];
 

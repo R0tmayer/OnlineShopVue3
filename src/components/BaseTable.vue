@@ -16,8 +16,8 @@
 				</td>
 				<td>
 					<div class="inline-flex space-x-3">
-						<MyButton text="Edit" :icon="PencilSquareIcon" class="min-w-[60px]" @click="openEditModal"></MyButton>
-						<MyButton text="Delete" :icon="TrashIcon" class="min-w-[60px]" :color="buttonColors.red" @click="openDeleteModal"></MyButton>
+						<BaseButton text="Edit" :icon="PencilSquareIcon" class="min-w-24" @click="openEditModal"></BaseButton>
+						<BaseButton text="Delete" :icon="TrashIcon" class="min-w-24" :color="buttonColors.red" @click="openDeleteModal"></BaseButton>
 					</div>
 				</td>
 			</tr>
@@ -26,8 +26,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-
+import { buttonColors } from '@/ButtonColors';
 import { PencilSquareIcon, TrashIcon } from '@heroicons/vue/24/outline';
 
 defineProps({
@@ -45,7 +44,4 @@ function openDeleteModal (){
 	emit('openDeleteModal');
 }
 
-const buttonColors = ref({
-	red: 'bg-red-500 text-white border-red-500 hover:bg-red-600',
-});
 </script>

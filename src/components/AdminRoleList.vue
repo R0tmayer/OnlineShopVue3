@@ -1,9 +1,13 @@
 <template>
-	<AdminRoleEditModal
+	<BaseEditModal
 		v-if="isEditModalOpen"
 		@closeEditModal="isEditModalOpen = false"
 		@saveEditModal="isEditModalOpen = false"
-	></AdminRoleEditModal>
+	>
+		<p class="text-xl text-center">Edit product</p>
+		<div class="flex flex-col space-y-3">
+			<MyFormInput labelText="Name" placeholderText="Name"></MyFormInput></div
+	></BaseEditModal>
 	<BaseDeleteConfirmModal
 		v-if="isDeleteModalOpen"
 		context="role"
@@ -15,12 +19,12 @@
 			<p>All roles</p>
 		</div>
 		<div>
-			<MyTable
+			<BaseTable
 				:items="roles"
 				:columns="columns"
 				@openEditModal="isEditModalOpen = true"
 				@openDeleteModal="isDeleteModalOpen = true"
-			></MyTable>
+			></BaseTable>
 		</div>
 	</div>
 </template>
@@ -28,8 +32,6 @@
 <script setup>
 import { roles } from '@/mocks/roles';
 import { ref } from 'vue';
-
-import AdminRoleEditModal from './AdminRoleEditModal.vue';
 
 const columns = ['name', ''];
 

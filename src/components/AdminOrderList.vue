@@ -1,9 +1,16 @@
 <template>
-	<AdminOrderEditModal
+	<BaseEditModal
 		v-if="isEditModalOpen"
 		@closeEditModal="isEditModalOpen = false"
 		@saveEditModal="isEditModalOpen = false"
-	></AdminOrderEditModal>
+	>
+		<p class="text-xl text-center">Edit order</p>
+		<div class="flex flex-col space-y-3">
+			<MyFormInput labelText="First name" placeholderText="First name"></MyFormInput>
+			<MyFormInput labelText="Last name" placeholderText="Last name"></MyFormInput>
+			<MyFormInput labelText="Email" placeholderText="Email"></MyFormInput>
+			<MyFormInput labelText="Total" placeholderText="Total"></MyFormInput></div
+	></BaseEditModal>
 	<BaseDeleteConfirmModal
 		v-if="isDeleteModalOpen"
 		context="order"
@@ -15,12 +22,12 @@
 			<p>All orders</p>
 		</div>
 		<div>
-			<MyTable
+			<BaseTable
 				:items="orders"
 				:columns="columns"
 				@openEditModal="isEditModalOpen = true"
 				@openDeleteModal="isDeleteModalOpen = true"
-			></MyTable>
+			></BaseTable>
 		</div>
 	</div>
 </template>
@@ -28,8 +35,6 @@
 <script setup>
 import { orders } from '@/mocks/orders';
 import { ref } from 'vue';
-
-import AdminOrderEditModal from './AdminOrderEditModal.vue';
 
 const columns = ['id', 'firstName', 'lastName', 'email', 'total'];
 

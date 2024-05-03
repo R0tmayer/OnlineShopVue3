@@ -16,14 +16,14 @@
 		</div>
 		<div class="inline-flex items-center justify-center space-x-5">
 			<RouterLink :to="{ name: 'cartPage' }">
-				<MyButton
+				<BaseButton
 					class="h-10 w-10 items-center justify-center"
 					:icon="ShoppingCartIcon"
 					:color="buttonColors.white"
 				/>
 			</RouterLink>
 			<RouterLink :to="{ name: 'loginPage' }">
-				<MyButton
+				<BaseButton
 					class="h-10 w-10 items-center justify-center"
 					:icon="UserIcon"
 					:color="buttonColors.white"
@@ -35,10 +35,7 @@
 
 <script setup>
 import { ShoppingCartIcon, UserIcon } from '@heroicons/vue/24/outline';
-import { ref } from 'vue';
-import MyButton from './MyButton.vue';
+import BaseButton from './BaseButton.vue';
 
-const buttonColors = ref({
-	white: 'bg-white text-black hover:bg-black hover:text-white',
-});
+import { buttonColors } from '@/ButtonColors';
 </script>

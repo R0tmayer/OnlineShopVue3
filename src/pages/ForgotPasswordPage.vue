@@ -8,7 +8,7 @@
 				<p class="text-2xl tracking-tight text-gray-900 text-center">Restore password</p>
 				<MyFormInput labelText="Email" placeholderText="Email"></MyFormInput>
 				<div class="flex items-center justify-between"></div>
-				<MyButton text="Restore" class="justify-center p-2.5 rounded-xl"></MyButton>
+				<BaseButton text="Restore" class="justify-center p-2.5 rounded-xl"></BaseButton>
 			</div>
 		</div>
 	</div>
