@@ -32,7 +32,7 @@ import { buttonColors } from '@/ButtonColors';
 const emit = defineEmits(['closeAddModal, addItem']);
 
 function add() {
-	emit('addItem');
+	emit('addItem'); // ивент закрыть модалку при добавлении (но ничего не делать)
 }
 
 function close() {

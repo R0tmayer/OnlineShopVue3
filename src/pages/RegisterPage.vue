@@ -26,7 +26,6 @@
 					ref="confirmPasswordInput"
 					labelText="Confirm password"
 					placeholderText="Confirm password"
-					inputType="password"
 					name="confirmPassword"
 				/>
 				<p v-if="doShowMatchPasswordWarning" class="text-red-500">
@@ -55,7 +54,7 @@ import { ref } from 'vue';
 const emailInput = ref(null);
 const passwordInput = ref(null);
 const confirmPasswordInput = ref(null);
-let doShowMatchPasswordWarning = ref(false);
+const doShowMatchPasswordWarning = ref(false);
 
 const register = () => {
 	doShowMatchPasswordWarning.value = false;

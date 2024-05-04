@@ -2,8 +2,8 @@
 	<BaseAddModal
 		v-if="isAddModalOpen"
 		:context="context"
-		@closeAddModal="isAddModalOpen = false"
-		@addItem="isAddModalOpen = false"
+		@closeAddModal="closeAllModal"
+		@addItem="addItem"
 	>
 		<slot name="addModalContent"></slot>
 	</BaseAddModal>
@@ -11,8 +11,8 @@
 	<BaseEditModal
 		v-if="isEditModalOpen"
 		:context="context"
-		@closeEditModal="isEditModalOpen = false"
-		@saveItem="isEditModalOpen = false"
+		@closeEditModal="closeAllModal"
+		@saveItem="saveItem"
 	>
 		<slot name="editModalContent"></slot>
 	</BaseEditModal>
@@ -20,8 +20,8 @@
 	<BaseDeleteModal
 		v-if="isDeleteModalOpen"
 		:context="context"
-		@closeDeleteModal="isDeleteModalOpen = false"
-		@deleteItem="isDeleteModalOpen = false"
+		@closeDeleteModal="closeAllModal"
+		@deleteItem="deleteItem"
 	></BaseDeleteModal>
 
 	<div class="rounded-2xl overflow-hidden border">
@@ -53,4 +53,28 @@ defineProps({
 const isEditModalOpen = ref(false);
 const isDeleteModalOpen = ref(false);
 const isAddModalOpen = ref(false);
+
+const emit = defineEmits(['addItem', 'saveItem', 'deleteItem']); // ивенты закрыть модалку и отправить ивент выше в AdminOrderList и уже там делаем запрос
+
+function addItem() {
+	emit('addItem');
+}
+
+function saveItem() {
+	emit('saveItem');
+}
+
+function deleteItem() {
+	emit('deleteItem');
+}
+
+function closeAllModal() {
+	isAddModalOpen.value = false;
+	isEditModalOpen.value = false;
+	isDeleteModalOpen.value = false;
+}
+
+defineExpose({
+	closeAllModal,
+});
 </script>

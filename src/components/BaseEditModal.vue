@@ -31,7 +31,7 @@ import { buttonColors } from '@/ButtonColors';
 const emit = defineEmits(['closeEditModal, saveItem']);
 
 function save() {
-	emit('saveItem');
+	emit('saveItem'); // ивент просто закрыть модалку при сохранении (но ничего не делать)
 }
 
 function close() {

@@ -36,15 +36,29 @@ const validatePassword = (value) => {
 	return regex.test(value);
 };
 
+const validateMoney = (value) => {
+	const regex = /^\d+(\.\d{1,2})?$/;
+	return regex.test(value);
+};
+
 const validate = () => {
+	errorMessage.value = '';
+
 	if (props.inputType === 'email') {
 		errorMessage.value = validateEmail(inputValue.value) ? '' : 'Invalid email';
 	} else if (props.inputType === 'password') {
 		errorMessage.value = validatePassword(inputValue.value)
 			? ''
 			: 'Password must contain at least 8 characters, including one letter and one number';
+	} else if (props.inputType === 'money') {
+		errorMessage.value = validateMoney(inputValue.value)
+			? ''
+			: 'Invalid money format. Use dot as decimal separator.';
+	} else if (inputValue.value === '') {
+		errorMessage.value = 'Cannot be empty';
 	}
 };
+
 const isValid = computed(() => !errorMessage.value);
 
 defineExpose({
