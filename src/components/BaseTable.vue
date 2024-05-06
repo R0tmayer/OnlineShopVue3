@@ -9,13 +9,13 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr v-for="(item, index) in items" :key="index" class="bg-white border-b last:border-b-0">
+			<tr v-for="(item, index) in items" :key="index" class="bg-white border-b last:border-b-0 hover:bg-gray-50">
 				<td class=" px-6 py-4" v-for="(column, indexColumn) in columns" :key="indexColumn">
 					<div v-if="column === 'price' || column === 'total'">$ {{ item[column].toFixed(2) }}</div>
 					<div v-else>{{ item[column] }}</div>
 				</td>
 				<td>
-					<div class="inline-flex space-x-3">
+					<div class="inline-flex float-end px-6 space-x-3">
 						<BaseButton text="Edit" :icon="PencilSquareIcon" class="min-w-24" @click="openEditModal"></BaseButton>
 						<BaseButton text="Delete" :icon="TrashIcon" class="min-w-24" :color="buttonColors.red" @click="openDeleteModal"></BaseButton>
 					</div>

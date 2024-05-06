@@ -1,24 +1,57 @@
 <template>
-	<BaseAdminList context="user" :columns="columns" :items="users">
+	<BaseAdminList
+		context="user"
+		:columns="columns"
+		:items="users"
+		@addItem="addItem"
+		@saveItem="saveItem"
+		@deleteItem="deleteItem"
+		ref="adminList"
+	>
 		<template v-slot:editModalContent>
-			<p class="text-xl text-center">Edit {{ context }}</p>
 			<div class="flex flex-col space-y-3">
 				<BaseFormInput
+					ref="editFirstNameInput"
 					labelText="First name"
 					placeholderText="First name"
+					name="firstName"
 				></BaseFormInput>
-				<BaseFormInput labelText="Last name" placeholderText="Last name"></BaseFormInput>
-				<BaseFormInput labelText="Email" placeholderText="Email"></BaseFormInput>
+				<BaseFormInput
+					ref="editLastNameInput"
+					labelText="Last name"
+					placeholderText="Last name"
+					name="lastName"
+				></BaseFormInput>
+				<BaseFormInput
+					ref="editEmailInput"
+					labelText="Email"
+					placeholderText="Email"
+					name="email"
+					inputType="email"
+				></BaseFormInput>
 			</div>
 		</template>
 		<template v-slot:addModalContent>
 			<div class="flex flex-col space-y-3">
 				<BaseFormInput
+					ref="addFirstNameInput"
 					labelText="First name"
 					placeholderText="First name"
+					name="firstName"
 				></BaseFormInput>
-				<BaseFormInput labelText="Last name" placeholderText="Last name"></BaseFormInput>
-				<BaseFormInput labelText="Email" placeholderText="Email"></BaseFormInput>
+				<BaseFormInput
+					ref="addLastNameInput"
+					labelText="Last name"
+					placeholderText="Last name"
+					name="lastName"
+				></BaseFormInput>
+				<BaseFormInput
+					ref="addEmailInput"
+					labelText="Email"
+					placeholderText="Email"
+					name="email"
+					inputType="email"
+				></BaseFormInput>
 			</div>
 		</template>
 	</BaseAdminList>
@@ -26,5 +59,52 @@
 
 <script setup>
 import { users } from '@/mocks/users';
-const columns = ['firstName', 'lastName', 'email', ''];
+import { ref } from 'vue';
+
+const columns = ['firstName', 'lastName', 'email'];
+
+const addFirstNameInput = ref(null);
+const addLastNameInput = ref(null);
+const addEmailInput = ref(null);
+
+const editFirstNameInput = ref(null);
+const editLastNameInput = ref(null);
+const editEmailInput = ref(null);
+
+const adminList = ref(null);
+
+function addItem() {
+	addFirstNameInput.value.validate();
+	addLastNameInput.value.validate();
+	addEmailInput.value.validate();
+
+	if (
+		addFirstNameInput.value.isValid &&
+		addLastNameInput.value.isValid &&
+		addEmailInput.value.isValid
+	) {
+		adminList.value.closeAllModal();
+		console.log('axios add item');
+	}
+}
+
+function saveItem() {
+	editFirstNameInput.value.validate();
+	editLastNameInput.value.validate();
+	editEmailInput.value.validate();
+
+	if (
+		editFirstNameInput.value.isValid &&
+		editLastNameInput.value.isValid &&
+		editEmailInput.value.isValid
+	) {
+		adminList.value.closeAllModal();
+		console.log('axios add item');
+	}
+}
+
+function deleteItem() {
+	adminList.value.closeAllModal();
+	console.log('axios delete item');
+}
 </script>

@@ -4,32 +4,33 @@
 		:columns="columns"
 		:items="orders"
 		@addItem="addItem"
-		@saveItem=""
-		@deleteItem=""
+		@saveItem="saveItem"
+		@deleteItem="deleteItem"
 		ref="adminList"
 	>
 		<template v-slot:editModalContent>
 			<div class="flex flex-col space-y-3">
 				<BaseFormInput
-					ref="firstNameInput"
+					ref="editFirstNameInput"
 					labelText="First name"
 					placeholderText="First name"
 					name="firstName"
 				></BaseFormInput>
 				<BaseFormInput
-					ref="lastNameInput"
+					ref="editLastNameInput"
 					labelText="Last name"
 					placeholderText="Last name"
 					name="lastName"
 				></BaseFormInput>
 				<BaseFormInput
-					ref="emailInput"
+					ref="editEmailInput"
 					labelText="Email"
 					placeholderText="Email"
 					name="email"
+					inputType="email"
 				></BaseFormInput>
 				<BaseFormInput
-					ref="totalInput"
+					ref="editTotalInput"
 					labelText="Total"
 					placeholderText="Total"
 					name="total"
@@ -81,10 +82,10 @@ const addLastNameInput = ref(null);
 const addEmailInput = ref(null);
 const addTotalInput = ref(null);
 
-const firstNameInput = ref(null);
-const lastNameInput = ref(null);
-const emailInput = ref(null);
-const totalInput = ref(null);
+const editFirstNameInput = ref(null);
+const editLastNameInput = ref(null);
+const editEmailInput = ref(null);
+const editTotalInput = ref(null);
 
 const adminList = ref(null);
 
@@ -106,10 +107,24 @@ function addItem() {
 }
 
 function saveItem() {
-	console.log('axios save item');
+	editFirstNameInput.value.validate();
+	editLastNameInput.value.validate();
+	editEmailInput.value.validate();
+	editTotalInput.value.validate();
+
+	if (
+		editFirstNameInput.value.isValid &&
+		editLastNameInput.value.isValid &&
+		editEmailInput.value.isValid &&
+		editTotalInput.value.isValid
+	) {
+		adminList.value.closeAllModal();
+		console.log('axios add item');
+	}
 }
 
 function deleteItem() {
+	adminList.value.closeAllModal();
 	console.log('axios delete item');
 }
 </script>
