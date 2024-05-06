@@ -23,8 +23,6 @@ defineProps({
 	product: Object,
 });
 
-import { ref } from 'vue';
-
 import { MinusIcon, PlusIcon, TrashIcon } from '@heroicons/vue/24/outline';
 import BaseButton from './BaseButton.vue';
 

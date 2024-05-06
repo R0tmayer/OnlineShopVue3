@@ -1,5 +1,5 @@
 <template>
-	<div class="flex space-x-5 justify-start">
+	<div class="flex space-x-10 justify-start">
 		<!-- Sidebar -->
 		<AdminSidebar></AdminSidebar>
 		<!-- Children router content -->

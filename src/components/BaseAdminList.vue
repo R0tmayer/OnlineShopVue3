@@ -1,4 +1,19 @@
 <template>
+	<div class="rounded-2xl overflow-hidden border">
+		<div class="flex justify-between p-5">
+			<p class="text-lg text-center">All {{ context }}s</p>
+			<BaseButton text="Add" class="min-w-16" @click="isAddModalOpen = true"></BaseButton>
+		</div>
+		<div>
+			<BaseTable
+				:items="items"
+				:columns="columns"
+				@openEditModal="isEditModalOpen = true"
+				@openDeleteModal="isDeleteModalOpen = true"
+			></BaseTable>
+		</div>
+	</div>
+
 	<BaseAddModal
 		v-if="isAddModalOpen"
 		:context="context"
@@ -23,21 +38,6 @@
 		@closeDeleteModal="closeAllModal"
 		@deleteItem="deleteItem"
 	></BaseDeleteModal>
-
-	<div class="rounded-2xl overflow-hidden border">
-		<div class="flex justify-between p-5">
-			<p class="text-lg text-center">All {{ context }}s</p>
-			<BaseButton text="Add" class="min-w-16" @click="isAddModalOpen = true"></BaseButton>
-		</div>
-		<div>
-			<BaseTable
-				:items="items"
-				:columns="columns"
-				@openEditModal="isEditModalOpen = true"
-				@openDeleteModal="isDeleteModalOpen = true"
-			></BaseTable>
-		</div>
-	</div>
 </template>
 
 <script setup>
