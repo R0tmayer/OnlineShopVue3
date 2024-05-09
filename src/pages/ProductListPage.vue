@@ -1,10 +1,6 @@
 <template>
 	<div class="grid grid-cols-5 gap-5 items-stretch">
-		<ProductListItem
-			v-for="product in products"
-			:key="product.id"
-			:product="product"
-		></ProductListItem>
+		<ProductListItem v-for="product in products" :product="product"></ProductListItem>
 	</div>
 </template>
 

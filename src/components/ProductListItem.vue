@@ -11,15 +11,28 @@
 		<p class="font-sans p-2 text-md">{{ product.name }}</p>
 		<div class="flex items-center justify-between mt-auto mb-3 mx-3">
 			<p>${{ product.price }}</p>
-			<BaseButton text="Add to cart" :icon="ShoppingCartIcon"></BaseButton>
+			<BaseButton
+				text="Add to cart"
+				:icon="ShoppingCartIcon"
+				@click="addToCart"
+			></BaseButton>
 		</div>
 	</div>
 </template>
 
 <script setup>
-defineProps({
+import { useCartStore } from '@/stores/cartStore';
+import { ShoppingCartIcon } from '@heroicons/vue/24/outline';
+
+const props = defineProps({
 	product: Object,
 });
 
-import { ShoppingCartIcon } from '@heroicons/vue/24/outline';
+const cartStore = useCartStore();
+
+function addToCart() {
+	console.log(props.product);
+	cartStore.addToCart(props.product);
+	console.log(cartStore.items);
+}
 </script>

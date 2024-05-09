@@ -30,4 +30,12 @@ import { ShoppingCartIcon } from '@heroicons/vue/24/outline';
 defineProps({
 	id: String,
 });
+
+import { useCartStore } from '@/stores/cartStore';
+
+const cartStore = useCartStore();
+
+function addToCart(product) {
+	cartStore.addToCart(product);
+}
 </script>
