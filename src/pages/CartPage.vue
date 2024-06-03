@@ -3,7 +3,14 @@
 	<div class="flex space-x-10">
 		<!-- Items -->
 		<div class="flex flex-col space-y-5 w-2/3">
-			<CartItem v-for="item in cartStore.items" :item="item"></CartItem>
+			<CartItem
+				v-for="item in cartStore.items"
+				:key="item.id"
+				:item="item"
+				@incrementCount="incrementItemCount"
+				@decrementCount="decrementItemCount"
+				@removeItem="removeItem"
+			></CartItem>
 		</div>
 		<!-- Subtotal -->
 		<div
@@ -11,7 +18,7 @@
 		>
 			<div class="inline-flex justify-between text-lg">
 				<p>Total:</p>
-				<p>$100</p>
+				<p>${{ cartStore.totalCartPrice }}</p>
 			</div>
 			<hr />
 			<RouterLink :to="{ name: 'checkoutPage' }">
@@ -22,19 +29,34 @@
 </template>
 
 <script setup>
+import { api } from '@/api/api';
 import CartItem from '@/components/CartItem.vue';
 import { useCartStore } from '@/stores/cartStore';
-import axios from 'axios';
 import { onMounted } from 'vue';
 
 const cartStore = useCartStore();
 
 async function getCart() {
-	// const response = await axios.get('http://localhost:5000/cart');
-	// cartStore.items = response.data.items;
+	const response = await api.cart.getCart();
+	cartStore.items = response.data.items;
 }
 
-// onMounted(() => {
-// 	getCart();
-// });
+onMounted(() => {
+	getCart();
+});
+
+async function incrementItemCount(itemId) {
+	api.cart.increment(itemId);
+	cartStore.incrementItem(itemId);
+}
+
+async function decrementItemCount(itemId) {
+	api.cart.decrement(itemId);
+	cartStore.decrementItem(itemId);
+}
+
+async function removeItem(itemId) {
+	api.cart.removeItem(itemId);
+	cartStore.removeItem(itemId);
+}
 </script>

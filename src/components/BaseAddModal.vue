@@ -29,7 +29,7 @@ defineProps({
 
 import { buttonColors } from '@/ButtonColors';
 
-const emit = defineEmits(['closeAddModal, addItem']);
+const emit = defineEmits(['closeAddModa', 'addItem']);
 
 function add() {
 	emit('addItem'); // ивент закрыть модалку при добавлении (но ничего не делать)

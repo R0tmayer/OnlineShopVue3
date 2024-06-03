@@ -1,7 +1,7 @@
 <script setup>
 defineProps({
 	text: String,
-	icon: Object,
+	icon: Function, // если Object то Warnings
 	color: {
 		type: String,
 		default: 'bg-blue-600 text-white hover:bg-blue-700',

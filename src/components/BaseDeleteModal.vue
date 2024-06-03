@@ -25,7 +25,7 @@ import BaseButton from './BaseButton.vue'; import BaseFormInput from
 defineProps({
 	context: String,
 });
-const emit = defineEmits(['closeDeleteModal, deleteItem']);
+const emit = defineEmits(['closeDeleteModal', 'deleteItem']);
 
 function deleteItem() {
 	emit('deleteItem');

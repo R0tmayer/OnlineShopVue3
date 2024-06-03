@@ -28,7 +28,7 @@ defineProps({
 
 import { buttonColors } from '@/ButtonColors';
 
-const emit = defineEmits(['closeEditModal, saveItem']);
+const emit = defineEmits(['closeEditModal', 'saveItem']);
 
 function save() {
 	emit('saveItem'); // ивент просто закрыть модалку при сохранении (но ничего не делать)

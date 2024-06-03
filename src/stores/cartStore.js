@@ -3,7 +3,6 @@ import { defineStore } from 'pinia';
 export const useCartStore = defineStore('cartStore', {
 	state: () => {
 		return {
-			totalCount: 0,
 			items: [],
 			// id
 			// count
@@ -11,28 +10,57 @@ export const useCartStore = defineStore('cartStore', {
 			// totalPrice
 		};
 	},
-	actions: {
-		$reset() {
-			this.count = 0;
-			this.items = [];
+	getters: {
+		totalCartPrice(state) {
+			var total = state.items.reduce(
+				(total, item) => total + parseFloat(item.count * item.product.price),
+				0
+			);
+			return total.toFixed(2);
 		},
-		addToCart(product) {
-			const item = this.items.find((item) => item.product.id === product.id);
+		totalCartCount(state) {
+			return state.items.length;
+		},
+	},
+	actions: {
+		addToCart(product, itemId) {
+			const existingItem = this.items?.find((item) => item.product.id === product.id);
 
-			if (item) {
-				item.count++;
-				item.totalPrice = item.count * item.product.price;
-			} else {
+			if (existingItem === undefined) {
 				const newItem = {
-					id: 1,
+					id: itemId,
 					count: 1,
 					product: product,
-					totalPrice: product.price,
 				};
 
 				this.items.push(newItem);
-				this.totalCount++;
+				return;
+			}
+
+			this.incrementItem(existingItem.id);
+		},
+		removeItem(itemId) {
+			this.items = this.items.filter((item) => item.id !== itemId);
+		},
+		incrementItem(itemId) {
+			this.items = this.items.map((item) => {
+				if (item.id === itemId) {
+					return {
+						...item,
+						count: item.count + 1,
+					};
+				}
+				return item;
+			});
+		},
+		decrementItem(itemId) {
+			const item = this.items.find((item) => item.id === itemId);
+			if (!item) return;
+			item.count--;
+			if (item.count === 0) {
+				this.removeItem(itemId);
 			}
 		},
 	},
+	persist: true,
 });

@@ -6,7 +6,7 @@
 				// , params: { id: product.id }
 			}"
 		>
-			<img :src="product.image" alt="no image found" />
+			<img :src="product.imagePath" alt="no image found" />
 		</RouterLink>
 		<p class="font-sans p-2 text-md">{{ product.name }}</p>
 		<div class="flex items-center justify-between mt-auto mb-3 mx-3">
@@ -21,18 +21,15 @@
 </template>
 
 <script setup>
-import { useCartStore } from '@/stores/cartStore';
 import { ShoppingCartIcon } from '@heroicons/vue/24/outline';
 
 const props = defineProps({
 	product: Object,
 });
 
-const cartStore = useCartStore();
+const emit = defineEmits(['addToCart']);
 
 function addToCart() {
-	console.log(props.product);
-	cartStore.addToCart(props.product);
-	console.log(cartStore.items);
+	emit('addToCart', props.product);
 }
 </script>

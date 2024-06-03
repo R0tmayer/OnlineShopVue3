@@ -18,7 +18,6 @@ import Navbar from './components/Navbar.vue';
 import './tailwindstyles.css';
 
 import { routes } from './routes';
-import { useCartStore } from './stores/cartStore';
 
 const router = createRouter({
 	history: createWebHistory(),
