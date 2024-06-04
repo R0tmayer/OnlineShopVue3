@@ -1,5 +1,4 @@
 <template>
-	ca
 	<div class="grid grid-cols-5 gap-5 items-stretch">
 		<ProductListItem
 			v-for="product in productStore.products"

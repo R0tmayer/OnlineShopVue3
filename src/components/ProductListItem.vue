@@ -3,7 +3,8 @@
 		<RouterLink
 			:to="{
 				name: 'productOverviewPage',
-				// , params: { id: product.id }
+				params: { productId: product.id },
+				props: true,
 			}"
 		>
 			<img :src="product.imagePath" alt="no image found" />

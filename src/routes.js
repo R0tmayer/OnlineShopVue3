@@ -12,17 +12,17 @@ import ProductOverviewPage from './pages/ProductOverviewPage.vue';
 import RegisterPage from './pages/RegisterPage.vue';
 
 export const routes = [
-	// {
-	// 	path: '/',
-	// 	redirect: { name: 'productListPage' },
-	// },
 	{
-		path: '/products',
+		path: '/',
+		redirect: { name: 'productListPage' },
+	},
+	{
+		path: '/product/all',
 		name: 'productListPage',
 		component: ProductListPage,
 	},
 	{
-		path: '/',
+		path: '/product/:productId',
 		name: 'productOverviewPage',
 		component: ProductOverviewPage,
 	},

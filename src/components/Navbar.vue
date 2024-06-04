@@ -4,7 +4,7 @@
 			<p>Navbar Brand</p>
 		</RouterLink>
 		<div class="inline-flex items-center justify-center space-x-10">
-			<RouterLink :to="{ name: 'productOverviewPage' }">
+			<RouterLink :to="{ name: 'productListPage' }">
 				<p>Home</p>
 			</RouterLink>
 			<RouterLink :to="{ name: 'productListPage' }">
