@@ -29,6 +29,7 @@
 					:color="buttonColors.white"
 				/>
 			</RouterLink>
+			<CartButton></CartButton>
 		</div>
 	</div>
 </template>
@@ -36,6 +37,7 @@
 <script setup>
 import { ShoppingCartIcon, UserIcon } from '@heroicons/vue/24/outline';
 import BaseButton from './BaseButton.vue';
+import CartButton from './CartButton.vue';
 
 import { buttonColors } from '@/ButtonColors';
 </script>
