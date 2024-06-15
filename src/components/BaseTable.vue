@@ -27,7 +27,6 @@
 
 <script setup>
 import { buttonColors } from '@/ButtonColors';
-import { PencilSquareIcon, TrashIcon } from '@heroicons/vue/24/outline';
 
 defineProps({
 	columns: Array,

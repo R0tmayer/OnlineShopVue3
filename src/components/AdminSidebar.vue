@@ -19,11 +19,4 @@
 	</div>
 </template>
 
-<script setup>
-import {
-	ReceiptPercentIcon,
-	ShoppingCartIcon,
-	TrashIcon,
-	UserIcon,
-} from '@heroicons/vue/24/outline';
-</script>
+<script setup></script>

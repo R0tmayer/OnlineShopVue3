@@ -15,7 +15,7 @@ import BaseModal from './components/BaseModal.vue';
 import BaseTable from './components/BaseTable.vue';
 import Navbar from './components/Navbar.vue';
 
-import './tailwindstyles.css';
+import './base.css';
 
 import { routes } from './routes';
 

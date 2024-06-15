@@ -1,41 +1,42 @@
 <template>
-	<div class="w-full flex items-center justify-between p-4 font-sans text-lg">
-		<RouterLink :to="{ name: 'productListPage' }">
-			<p>Navbar Brand</p>
-		</RouterLink>
-		<div class="inline-flex items-center justify-center space-x-10">
-			<RouterLink :to="{ name: 'productListPage' }">
-				<p>Home</p>
-			</RouterLink>
-			<RouterLink :to="{ name: 'productListPage' }">
-				<p>Catalog</p>
-			</RouterLink>
-			<RouterLink :to="{ name: 'adminDashboardPage' }">
-				<p>Admin</p>
-			</RouterLink>
+	<div class="flex items-center">
+		<div
+			class="btn bg-transparent border-none shadow-none hover:bg-transparent flex basis-left items-center justify-center"
+		>
+			<FontAwesomeIcon
+				:icon="faGamepad"
+				size="2xl"
+				color="mediumblue"
+				class="mr-1"
+			></FontAwesomeIcon>
+			<div class="text-3xl mr-4">GamePlaza</div>
 		</div>
-		<div class="inline-flex items-center justify-center space-x-5">
-			<RouterLink :to="{ name: 'cartPage' }">
-				<BaseButton
-					class="h-10 w-10 items-center justify-center"
-					:icon="ShoppingCartIcon"
-					:color="buttonColors.white"
-				/>
-			</RouterLink>
-			<RouterLink :to="{ name: 'loginPage' }">
-				<BaseButton
-					class="h-10 w-10 items-center justify-center"
-					:icon="UserIcon"
-					:color="buttonColors.white"
-				/>
-			</RouterLink>
+		<label
+			class="input input-bordered flex basis-center items-center gap-2 focus-within:outline-none"
+		>
+			<input type="text" class="grow" placeholder="Search" />
+			<button>
+				<FontAwesomeIcon :icon="faMagnifyingGlass"></FontAwesomeIcon>
+			</button>
+		</label>
+		<div class="flex basis-right items-center justify-end gap-6">
+			<div class="indicator">
+				<span class="indicator-item badge badge-ghost">30</span>
+				<div class="btn btn-neutral">
+					<FontAwesomeIcon :icon="faCartShopping" size="lg"></FontAwesomeIcon>
+				</div>
+			</div>
+
+			<div class="btn btn-primary border-none text-white text-md">Log in</div>
 		</div>
 	</div>
 </template>
 
 <script setup>
-import { ShoppingCartIcon, UserIcon } from '@heroicons/vue/24/outline';
-import BaseButton from './BaseButton.vue';
-
-import { buttonColors } from '@/ButtonColors';
+import {
+	faCartShopping,
+	faGamepad,
+	faMagnifyingGlass,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 </script>

@@ -33,7 +33,6 @@
 
 <script setup>
 import { buttonColors } from '@/ButtonColors';
-import { MinusIcon, PlusIcon, TrashIcon } from '@heroicons/vue/24/outline';
 import { computed } from 'vue';
 import BaseButton from './BaseButton.vue';
 

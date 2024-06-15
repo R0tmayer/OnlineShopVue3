@@ -29,7 +29,6 @@
 <script setup>
 import { api } from '@/api/api';
 import { useCartStore } from '@/stores/cartStore';
-import { ShoppingCartIcon } from '@heroicons/vue/24/outline';
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 

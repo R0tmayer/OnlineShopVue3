@@ -35,10 +35,4 @@
 	</div>
 </template>
 
-<script setup>
-import { CreditCardIcon } from '@heroicons/vue/24/outline';
-
-function onSubmit(values) {
-	console.log(values);
-}
-</script>
+<script setup></script>

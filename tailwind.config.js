@@ -2,7 +2,13 @@
 export default {
 	content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
 	theme: {
-		extend: {},
+		extend: {
+			flexBasis: {
+				left: '20%',
+				center: '63%',
+				right: '17%',
+			},
+		},
 	},
-	plugins: [],
+	plugins: [require('daisyui')],
 };
