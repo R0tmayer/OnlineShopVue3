@@ -13,6 +13,7 @@ import BaseFormInput from './components/BaseFormInput.vue';
 import BaseInput from './components/BaseInput.vue';
 import BaseModal from './components/BaseModal.vue';
 import BaseTable from './components/BaseTable.vue';
+import CartButton from './components/CartButton.vue';
 import Navbar from './components/Navbar.vue';
 
 import './base.css';
@@ -31,6 +32,7 @@ pinia.use(piniaPluginPersistedState);
 const app = createApp(App);
 
 app.component('BaseButton', BaseButton);
+app.component('CartButton', CartButton);
 app.component('BaseFormInput', BaseFormInput);
 app.component('BaseInput', BaseInput);
 app.component('BaseTable', BaseTable);
